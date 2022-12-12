@@ -1,9 +1,9 @@
-package Day2;
+package day02.part1;
 
 public enum Result {
     LOOSE(0),
-    DRAW(1),
-    WIN(3),
+    DRAW(3),
+    WIN(6),
     ;
 
     final int value;

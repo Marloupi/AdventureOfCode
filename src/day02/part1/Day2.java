@@ -1,10 +1,9 @@
-package Day2;
+package day02.part1;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,8 +14,8 @@ public class Day2 {
         List<Match> matches = holeDaten();
 
         // Match Bewerten
-
-
+        int playerScore = matches.stream().mapToInt(Match::getScore).sum();
+        System.out.println("Part 1 Score: " + playerScore);
     }
 
     private static List<Match> holeDaten() {
@@ -43,6 +42,7 @@ public class Day2 {
                     case "A", "X" -> Symbol.ROCK;
                     case "Y", "B" -> Symbol.PAPER;
                     case "C", "Z" -> Symbol.SCISSORS;
+                    default -> throw new IllegalStateException("Wrong input");
                 };
     }
 
